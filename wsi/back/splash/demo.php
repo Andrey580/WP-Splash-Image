@@ -103,7 +103,7 @@
 
     jQuerySplash(document).ready(function () {
 
-		<?/* Splash Image */?>
+		<?php /* Splash Image */?>
 
 		jQuerySplash("#splashLink").overlay({
 			mask: {
@@ -116,25 +116,25 @@
 			,fixed: <?php echo $_POST["wsi_fixed_splash"]; ?>
 		});
 
-		<?/* Autoclose de la Splash Image */?>
+		<?php /* Autoclose de la Splash Image */?>
 		<?php if ($_POST["wsi_display_time"] > 0) { ?>
 			setTimeout("jQuerySplash('#miesSPLASH').fadeOut()",<?php echo $_POST["wsi_display_time"]; ?>000);
 			setTimeout("jQuerySplash('#exposeMask').fadeOut()",<?php echo $_POST["wsi_display_time"]; ?>000);
 		<?php } ?>
 
-		<?/* On masque la croix en haut à droite si besoin */?>
+		<?php /* On masque la croix en haut à droite si besoin */?>
 		<?php if($_POST['wsi_hide_cross']=='true') { ?>
 			jQuerySplash('.simple_overlay .close').css('display','none');
 		<?php } ?>
 		
-		<?/* On masque la bordure d'ombre si besoin */?>
+		<?php /* On masque la bordure d'ombre si besoin */?>
 		<?php if($_POST['wsi_disable_shadow_border']=='true') { ?>
 			jQuerySplash('.simple_overlay').css('-moz-box-shadow','none');
 			jQuerySplash('.simple_overlay').css('-webkit-box-shadow','none');
 			jQuerySplash('.simple_overlay').css('box-shadow','none');
 		<?php } ?>
 
-		<?/* On modifie la marge supperieur si elle est precisee */?>
+		<?php /* On modifie la marge supperieur si elle est precisee */?>
 		<?php if($_POST['wsi_margin_top']!='') { ?>
 			jQuerySplash('.simple_overlay').css('margin-top','<?php echo $_POST["wsi_margin_top"]; ?>px');
 		<?php } ?>
